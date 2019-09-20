@@ -1,0 +1,106 @@
+/* ********************** */
+@import 'svg-symbols';
+/* vendors */
+@import 'vendors/slick';
+@import 'vendors/slick-theme';
+@import 'vendors/no-ui-slider';
+
+/* base */
+@import 'base/variables';
+@import 'base/fonts';
+@import 'base/normalize';
+@import 'base/typography';
+@import 'base/controls';
+
+/* layouts */
+@import 'layouts/default';
+@import 'layouts/popup-body';
+@import 'layouts/popover';
+
+/* blocks */
+@import 'blocks/header';
+@import 'blocks/footer';
+
+@import 'pages/index';
+
+a
+{
+	color: #000;
+}
+a:active
+{
+	color: inherit;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	outline: 0;
+}
+
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+// svg > use { fill: none; }
+
+// прячем svg спрайт, но не скрываем т.к. display: none; ломает градиенты и т.д
+.svg-symbol
+{
+	border: 0 !important;
+	clip: rect(0 0 0 0) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+}
+
+
+.container
+{
+	max-width: 1500px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 25px;
+	padding-right: 25px;
+	position: relative;
+}
+
+.tab
+{
+	display: none;
+}
+.tab_open
+{
+	display: block;
+}
+
+@media (max-width: $medium)
+{
+	.container
+	{
+		max-width: 880px;
+	}
+}
+@media (max-width: $tablet)
+{
+	.container
+	{
+		max-width: 648px;
+	}
+}
+@media (max-width: $mobile)
+{
+	.container
+	{
+		max-width: 480px;
+		padding-left: 22px;
+		padding-right: 22px;
+	}
+}

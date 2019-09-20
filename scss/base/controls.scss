@@ -1,0 +1,333 @@
+.button
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: $second-font;
+	background-color: $accent-color;
+	color: #fff;
+	font-size: 12px;
+	line-height: normal;
+	border: 1px solid $accent-color;
+	transition: all .125s;
+
+	&:hover
+	{
+		background-color: transparent;
+		border-color: $grey;
+		color: $accent-color;
+	}
+}
+
+.btn
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+	line-height: 14px;
+	border: 1px solid #b1b1b1;
+	padding: 0 15px;
+	text-align: center;
+	white-space: nowrap;
+	transition: all .125s;
+	color: $accent-color;
+	&:hover
+	{
+		border-color: $accent-color;
+		background-color: $accent-color;
+		color: #fff;
+	}
+	&:disabled
+	{
+		// стили для отключенной кнопки
+	}
+}
+.btn_loader
+{
+
+}
+.btn_dark-skin
+{
+	border-color: #B1B1B1;
+	min-height: 32px;
+	color: #000;
+	&:hover
+	{
+		color: #fff;
+	}
+}
+
+.btn_accent
+{
+	font-family: $second-font;
+	color: #fff;
+	background-color: $accent-color;
+	border-color: $accent-color;
+	&:hover
+	{
+		background-color: #fff;
+		border-color: #B1B1B1;
+		color: $accent-color;
+	}
+}
+.btn_full
+{
+	width: 100%;
+}
+
+.input-wr
+{
+	position: relative;
+	display: inline-block;
+	padding-top: 22px;
+	width: 100%;
+}
+.input
+{
+	display: block;
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #D1D1D1;
+	background-color: #fff;
+	box-shadow: none;
+	color: #000;
+	font-size: 14px;
+	line-height: 22px;
+	padding-bottom: 10px;
+	padding-left: 0;
+	transition: 0.2s ;
+	&:focus,
+	&:not([value=""])
+	{
+		& ~ .input__label
+		{
+			transform: translateY(-20px);
+			font-size: 11px;
+			color: #D1D1D1;
+		}
+		& ~ .input__sub-text_text
+		{
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	&:focus
+	{
+		border-color: darken(#D1D1D1, 10);
+	}
+}
+.input__sub-text
+{
+	position: absolute;
+	left: 0;
+	top: 100%;
+	margin-top: 10px;
+	font-size: 11px;
+	transition: 0.2s;
+	transform: translateY(-4px);
+	opacity: 0;
+}
+.input__sub-text_error
+{
+	color: #ff0000;
+}
+.input__sub-text_text
+{
+	color: #B1B1B1;
+}
+.input_error
+{
+	border-color: #FF0000;
+	&:focus,
+	&:not([value=""])
+	{
+		border-color: #ff0000;
+		& ~ .input__sub-text_text
+		{
+			transform: translateY(-4px);
+			opacity: 0;
+		}
+	}
+	& ~ .input__sub-text_error
+	{
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+.input__label
+{
+	position: absolute;
+	color: #9F9F9F;
+	font-size: 14px;
+	line-height: 22px;
+	top: 23px;
+	left: 0;
+	transition: 0.2s;
+}
+
+.textarea-wr
+{
+	position: relative;
+	display: inline-block;
+	padding-top: 22px;
+	width: 100%;
+}
+.textarea
+{
+	resize: vertical;
+	width: 100%;
+	border-color: #D1D1D1;
+	transition: 0.2s;
+	padding: 17px;
+	font-size: 14px;
+	line-height: 22px;
+	margin-top: 33px;
+	display: block;
+	min-height: 60px;
+	&:focus,
+	&:not([value=""])
+	{
+		& ~ .input__label
+		{
+			color: #D1D1D1;
+		}
+		& ~ .input__sub-text_text
+		{
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	&:focus
+	{
+		border-color: darken(#D1D1D1, 10);
+	}
+}
+
+.o-checkbox-wr,
+.o-radio-wr
+{
+	display: flex;
+}
+.o-checkbox,
+.o-radio
+{
+	position: relative;
+	font-size: 0;
+	display: inline-block;
+}
+
+// стилизация стандартного чекбокса + стилизация наших блоков
+// взависимости от состояния стандартного чекбокса
+.o-checkbox__input,
+.o-radio__input
+{
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: 0;
+	left: 0;
+	z-index: -10;
+	visibility: hidden;
+	opacity: 0;
+
+	&:enabled
+	{
+		& ~ .o-checkbox__body,
+		& ~ .o-radio__body
+		{
+			cursor: pointer;
+
+			.o-checkbox__box,
+			.o-radio__box
+			{
+				border-color: #B1B1B1;
+			}
+			.o-checkbox__text,
+			.o-radio__text
+			{
+				color: black;
+			}
+		}
+		&:not(:checked)
+		{
+			& ~ .o-checkbox__body:hover .o-checkbox__box,
+			& ~ .o-radio__body:hover .o-radio__box
+			{
+				border-color: $accent-color;
+			}
+		}
+		&:checked ~ .o-checkbox__body .o-checkbox__box,
+		&:checked ~ .o-radio__body .o-radio__box
+		{
+			border-color: $accent-color;
+			background-color: $accent-color;
+		}
+		&:focus ~ .o-checkbox__body .o-checkbox__box,
+		&:focus ~ .o-radio__body .o-radio__box
+		{
+			outline: 2px solid pink;
+		}
+	}
+	&:disabled:checked ~ .o-checkbox__body .o-checkbox__box,
+	&:disabled:checked ~ .o-radio__body .o-radio__box
+	{
+		border-color: rgba($accent-color, 0.5);
+		background-color: rgba($accent-color, 0.5);
+	}
+}
+.o-checkbox__box,
+.o-radio__box
+{
+	width: 10px;
+	height: 10px;
+	border: 1px solid #B1B1B1;
+	display: inline-block;
+	vertical-align: top;
+	transition: 0.2s;
+	border-radius: 100%;
+}
+.o-checkbox__text,
+.o-radio__text,
+{
+	font-size: 14px;
+	line-height: normal;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 15px;
+}
+
+@media (max-width: $tablet)
+{
+	.input__sub-text
+	{
+		margin-top: 8px;
+	}
+}
+
+@media (max-width: $mobile)
+{
+	.input
+	{
+		font-size: 10px;
+		line-height: 16px;
+		padding-bottom: 8px;
+		padding-left: 0;
+		&:focus,
+		&:not([value=""])
+		{
+			& ~ .input__label
+			{
+				transform: translateY(-18px);
+				font-size: 8px;
+			}
+		}
+
+	}
+	.input__label
+	{
+		font-size: 10px;
+	}
+}

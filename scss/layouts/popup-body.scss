@@ -1,0 +1,54 @@
+.popup-wr
+{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	display: flex;
+	justify-content: flex-end;
+	display: none;
+}
+
+.popup-overlay
+{
+	z-index: 9;
+	background-color: rgba(#000, 0.11);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	will-change: opacity;
+	opacity: 0;
+}
+.popup-body
+{
+	background-color: #fff;
+	height: 100%;
+	z-index: 10;
+	min-width: 400px;
+	overflow-y: auto;
+	padding-bottom: 10px;
+}
+.popup-body-html
+{
+	will-change: opacity;
+	-webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: $mobile)
+{
+	.popup-body
+	{
+		min-width: 185px;
+	}
+}
+@media (max-width: $tablet)
+{
+	.popup-body
+	{
+		max-width: 90vw;
+	}
+}
