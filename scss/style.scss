@@ -1,9 +1,6 @@
 /* ********************** */
-@import 'svg-symbols';
+// @import 'svg-symbols';
 /* vendors */
-@import 'vendors/slick';
-@import 'vendors/slick-theme';
-@import 'vendors/no-ui-slider';
 
 /* base */
 @import 'base/variables';
@@ -15,7 +12,7 @@
 /* layouts */
 @import 'layouts/default';
 @import 'layouts/popup-body';
-@import 'layouts/popover';
+// @import 'layouts/popover';
 
 /* blocks */
 @import 'blocks/header';

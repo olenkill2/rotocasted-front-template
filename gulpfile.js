@@ -37,20 +37,11 @@ gulp.task('sass', () => {
 // файлы для сборки
 var jsFiles = [
 	'js/vendors/jquery-3.4.1.min.js',
-	'js/vendors/slick-1.9.min.js',
 	'js/vendors/lazyload.min.js',
 	'js/vendors/anime.min.js',
 	'js/vendors/body-scroll-lock.min.js',
 	'js/vendors/scrollmagick.min.js',
-	'js/vendors/no-ui-slider.min.js',
 	'js/vendors/imask.min.js',
-	'js/sliders.js',
-	'js/maps.js',
-	'js/custom-animations.js',
-	'js/validation.js',
-	'js/deliveryAnimation.js',
-	'js/cookies.js',
-	'js/cart.js',
 	'js/main.js'
 ];
 
